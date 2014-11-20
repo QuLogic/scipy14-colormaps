@@ -33,7 +33,8 @@ cmaps = [('Sequential',     ['binary', 'Blues', 'BuGn', 'BuPu', 'gist_yarg',
                              'gist_gray', 'gist_heat', 'gray', 'hot', 'pink',
                              'spring', 'summer', 'winter']),
          ('Diverging',      ['BrBG', 'bwr', 'coolwarm', 'PiYG', 'PRGn', 'PuOr',
-                             'RdBu', 'RdGy', 'RdYlBu', 'RdYlGn', 'seismic']),
+                             'RdBu', 'RdGy', 'RdYlBu', 'RdYlGn', 'seismic',
+                             'Spectral']),
          ('Qualitative',    ['Accent', 'Dark2', 'hsv', 'Paired', 'Pastel1',
                              'Pastel2', 'Set1', 'Set2', 'Set3', 'spectral']),
          ('Miscellaneous',  ['gist_earth', 'gist_ncar', 'gist_rainbow',
@@ -81,7 +82,7 @@ for cmap_category, cmap_list in cmaps:
         elif cmap_category=='Diverging':
             dc = 1.2
             ax.scatter(x+j*dc, lab[0,:,0], c=x, cmap=cmap, s=300, linewidths=0.)
-            ax.axis([-0.1,13.1,0,100])
+            ax.axis([-0.1,14.3,0,100])
             locs.append(x[int(x.size/2.)]+j*dc) # store locations for colormap labels
 
         elif cmap_category=='Qualitative':
