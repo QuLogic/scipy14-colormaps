@@ -62,19 +62,27 @@ cmaps = [('Sequential',     ['binary', 'Blues', 'BuGn', 'BuPu', 'gist_yarg',
                              'gnuplot', 'gnuplot2', 'ocean', 'rainbow',
                              'terrain', 'flag', 'prism'])]
 
-ncmaps = len(cmaps)
-        
 x = np.linspace(0.0, 1.0, 100)
 
-
-
-nrows = max(len(cmap_list) for cmap_category, cmap_list in cmaps)
 gradient = np.linspace(0, 1, 256)
 gradient = np.vstack((gradient, gradient))
 
+# In the following, the number of rows is hard-coded to the value used in the
+# original plots, so that adding new rows does not change the plot too much.
+nrows = 20  # max(len(cmap_list) for cmap_category, cmap_list in cmaps)
+height = 6  # Default in matplotlib
+top_space = 0.05 * height
+bottom_space = 0.01 * height
+row_height = (height - top_space - bottom_space) / nrows
+
+
 def plot_color_gradients(cmap_category, cmap_list):
-    fig, axes = plt.subplots(nrows=nrows, ncols=2)
-    fig.subplots_adjust(top=0.95, bottom=0.01, left=0.2, right=0.99, wspace=0.05)
+    nrows = len(cmap_list)
+    width = 8
+    height = row_height * nrows + top_space + bottom_space
+    fig, axes = plt.subplots(nrows=nrows, ncols=2, figsize=(width, height))
+    fig.subplots_adjust(top=1-top_space/height, bottom=bottom_space/height,
+                        left=0.2, right=0.99, wspace=0.05)
     fig.suptitle(cmap_category + ' colormaps', fontsize=14, y=1.0, x=0.6)
     # axes[0].set_title(cmap_category + ' colormaps', fontsize=14)
 
