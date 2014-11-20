@@ -109,5 +109,5 @@ for cmap_category, cmap_list in cmaps:
         label.set_rotation(60)
 
     fig.tight_layout()
-    fig.savefig('figures/' + cmap_category + '.png', dpi=100)
+    fig.savefig('figures/l' + cmap_category + '.png', dpi=100)
     plt.close(fig)
