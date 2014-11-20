@@ -120,7 +120,8 @@ def plot_color_gradients(cmap_category, cmap_list):
         ax[0].set_axis_off()
         ax[1].set_axis_off()
     # pdb.set_trace()
-    fig.savefig('figures/bw' + cmap_category + '.png', dpi=150)
+    fig.savefig('figures/bw' + cmap_category + '.png', dpi=150,
+                bbox_inches='tight')
     plt.close(fig)
 
 
