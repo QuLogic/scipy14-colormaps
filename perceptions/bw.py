@@ -57,11 +57,11 @@ cmaps = [('Sequential',     ['binary', 'Blues', 'BuGn', 'BuPu', 'gist_yarg',
                              'RdBu', 'RdGy', 'RdYlBu', 'RdYlGn', 'seismic',
                              'Spectral']),
          ('Qualitative',    ['Accent', 'Dark2', 'hsv', 'Paired', 'Pastel1',
-                             'Pastel2', 'Set1', 'Set2', 'Set3', 'spectral']),
+                             'Pastel2', 'Set1', 'Set2', 'Set3']),
          ('Miscellaneous',  ['gist_earth', 'gist_ncar', 'gist_rainbow',
                              'gist_stern', 'jet', 'brg', 'CMRmap', 'cubehelix',
                              'gnuplot', 'gnuplot2', 'ocean', 'rainbow',
-                             'terrain', 'flag', 'prism'])]
+                             'terrain', 'flag', 'prism', 'nipy_spectral'])]
 
 x = np.linspace(0.0, 1.0, 100)
 

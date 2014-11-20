@@ -36,11 +36,11 @@ cmaps = [('Sequential',     ['binary', 'Blues', 'BuGn', 'BuPu', 'gist_yarg',
                              'RdBu', 'RdGy', 'RdYlBu', 'RdYlGn', 'seismic',
                              'Spectral']),
          ('Qualitative',    ['Accent', 'Dark2', 'hsv', 'Paired', 'Pastel1',
-                             'Pastel2', 'Set1', 'Set2', 'Set3', 'spectral']),
+                             'Pastel2', 'Set1', 'Set2', 'Set3']),
          ('Miscellaneous',  ['gist_earth', 'gist_ncar', 'gist_rainbow',
                              'gist_stern', 'jet', 'brg', 'CMRmap', 'cubehelix',
                              'gnuplot', 'gnuplot2', 'ocean', 'rainbow',
-                             'terrain', 'flag', 'prism'])]
+                             'terrain', 'flag', 'prism', 'nipy_spectral'])]
 
 # indices to step through colormap        
 x = np.linspace(0.0, 1.0, 100)
@@ -88,13 +88,13 @@ for cmap_category, cmap_list in cmaps:
         elif cmap_category=='Qualitative':
             dc = 1.3
             ax.scatter(x+j*dc, lab[0,:,0], c=x, cmap=cmap, s=300, linewidths=0.)
-            ax.axis([-0.1,13.1,0,100])
+            ax.axis([-0.1,11.8,0,100])
             locs.append(x[int(x.size/2.)]+j*dc) # store locations for colormap labels
 
         elif cmap_category=='Miscellaneous':
             dc = 1.5
             ax.scatter(x+j*dc, lab[0,:,0], c=x, cmap=cmap, s=300, linewidths=0.)
-            ax.axis([-0.1,22.1,0,100])
+            ax.axis([-0.1,23.6,0,100])
             locs.append(x[int(x.size/2.)]+j*dc) # store locations for colormap labels
     
     # Set up labels for colormaps
